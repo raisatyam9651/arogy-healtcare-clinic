@@ -69,7 +69,7 @@
   </svg>
 
   <!-- ===================== TOP INFO BAR ===================== -->
-  <div class="topbar">
+  <section class="topbar" aria-label="संपर्क जानकारी">
     <div class="container topbar__inner">
       <a class="topbar__item topbar__address" href="https://maps.google.com/?cid=9517664933012018362" target="_blank" rel="noopener">
         <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
@@ -78,7 +78,7 @@
       <div class="topbar__right">
         <a class="topbar__item topbar__phone" href="tel:+918477854507" aria-label="कॉल करें: +91 8477854507">
           <i class="fa-solid fa-phone" aria-hidden="true"></i>
-          <span lang="en">+91 8477854507</span>
+          <span lang="en">+91&nbsp;8477854507</span>
         </a>
         <p class="topbar__item topbar__hours">
           <i class="fa-regular fa-clock" aria-hidden="true"></i>
@@ -86,7 +86,7 @@
         </p>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ===================== HEADER / NAVIGATION ===================== -->
   <header class="header" id="header">
@@ -121,7 +121,7 @@
             <i class="fa-regular fa-calendar-days" aria-hidden="true"></i><span lang="en">Book Appointment</span>
           </a>
           <a href="tel:+918477854507" class="btn btn--outline btn--block">
-            <i class="fa-solid fa-phone" aria-hidden="true"></i><span lang="en">+91 8477854507</span>
+            <i class="fa-solid fa-phone" aria-hidden="true"></i><span lang="en">+91&nbsp;8477854507</span>
           </a>
         </div>
       </nav>
@@ -136,8 +136,9 @@
         <span class="nav-toggle__bar"></span>
       </button>
     </div>
+    <!-- Inside the header so it shares the drawer's stacking context -->
+    <div class="nav-backdrop" hidden></div>
   </header>
-  <div class="nav-backdrop" hidden></div>
 
   <main id="main">
 
@@ -175,7 +176,7 @@
               <i class="fa-regular fa-calendar-days" aria-hidden="true"></i><span lang="en">Book Appointment</span>
             </a>
             <a href="tel:+918477854507" class="btn btn--outline btn--lg">
-              <i class="fa-solid fa-phone" aria-hidden="true"></i><span lang="en">Call Now</span>
+              <i class="fa-solid fa-phone" aria-hidden="true"></i><span lang="en">Call&nbsp;Now</span>
             </a>
           </div>
           <ul class="hero__info" lang="en">
@@ -449,12 +450,12 @@
             </form>
           </div>
 
-          <aside class="quick-contact" aria-labelledby="qc-title">
+          <div class="quick-contact">
             <p class="quick-contact__eyebrow" lang="en">Quick Contact</p>
             <h3 class="quick-contact__title" id="qc-title">तुरंत संपर्क करें</h3>
             <a class="qc-phone" href="tel:+918477854507" aria-label="कॉल करें: +91 8477854507">
               <span class="qc-phone__icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
-              <span lang="en">+91 8477854507</span>
+              <span lang="en">+91&nbsp;8477854507</span>
             </a>
             <a class="btn btn--whatsapp btn--block" href="https://wa.me/918477854507?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9D%E0%A5%87%20%E0%A4%86%E0%A4%B0%E0%A5%8B%E0%A4%97%E0%A5%8D%E0%A4%AF%20%E0%A4%B9%E0%A5%87%E0%A4%B2%E0%A5%8D%E0%A4%A5%E0%A4%95%E0%A5%87%E0%A4%AF%E0%A4%B0%20%E0%A4%95%E0%A5%8D%E0%A4%B2%E0%A5%80%E0%A4%A8%E0%A4%BF%E0%A4%95%20%E0%A4%B8%E0%A5%87%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" target="_blank" rel="noopener">
               <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>WhatsApp पर बात करें
@@ -466,7 +467,7 @@
               <li><i class="fa-solid fa-location-dot" aria-hidden="true"></i><span>Sector 18, Maruti Gate No. 1, Baisfuta Road Side</span></li>
               <li><i class="fa-regular fa-clock" aria-hidden="true"></i><span>Mon – Sun: 8:00 AM – 10:00 PM</span></li>
             </ul>
-          </aside>
+          </div>
         </div>
       </div>
     </section>
@@ -701,7 +702,7 @@
         <ul class="footer__contact-list">
           <li>
             <i class="fa-solid fa-phone" aria-hidden="true"></i>
-            <a href="tel:+918477854507" lang="en">+91 8477854507</a>
+            <a href="tel:+918477854507" lang="en">+91&nbsp;8477854507</a>
           </li>
           <li>
             <i class="fa-solid fa-location-dot" aria-hidden="true"></i>
@@ -751,10 +752,10 @@
   </nav>
 
   <!-- Gallery lightbox -->
-  <dialog class="lightbox" id="lightbox" aria-label="चित्र">
+  <dialog class="lightbox" id="lightbox" aria-labelledby="lightbox-caption">
     <button class="lightbox__close" type="button" aria-label="बंद करें"><i class="fa-solid fa-xmark" aria-hidden="true"></i></button>
     <figure class="lightbox__figure">
-      <figcaption class="lightbox__caption"></figcaption>
+      <figcaption class="lightbox__caption" id="lightbox-caption"></figcaption>
     </figure>
   </dialog>
 

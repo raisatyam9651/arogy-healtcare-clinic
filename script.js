@@ -77,9 +77,19 @@
     window.requestAnimationFrame(function () { backdrop.classList.add('is-visible'); });
     navToggle.setAttribute('aria-expanded', 'true');
     navToggle.setAttribute('aria-label', 'मेनू बंद करें');
-    doc.body.classList.add('nav-open');
+    doc.documentElement.classList.add('nav-open');
     doc.addEventListener('keydown', onDrawerKeydown);
-    if (navClose) navClose.focus({ preventScroll: true });
+    if (navClose) focusWhenVisible(navClose, 10);
+  }
+
+  // The drawer can only take focus once its visibility has switched to "visible"
+  function focusWhenVisible(el, framesLeft) {
+    if (!nav.classList.contains('is-open')) return;
+    if (window.getComputedStyle(nav).visibility === 'visible') {
+      el.focus({ preventScroll: true });
+    } else if (framesLeft > 0) {
+      window.requestAnimationFrame(function () { focusWhenVisible(el, framesLeft - 1); });
+    }
   }
 
   function closeNav(restoreFocus) {
@@ -88,7 +98,7 @@
     backdrop.classList.remove('is-visible');
     navToggle.setAttribute('aria-expanded', 'false');
     navToggle.setAttribute('aria-label', 'मेनू खोलें');
-    doc.body.classList.remove('nav-open');
+    doc.documentElement.classList.remove('nav-open');
     doc.removeEventListener('keydown', onDrawerKeydown);
     window.setTimeout(function () {
       if (!nav.classList.contains('is-open')) backdrop.hidden = true;
@@ -255,8 +265,8 @@
     };
 
     var updateSliderButtons = function () {
-      var maxScroll = track.scrollWidth - track.clientWidth - 2;
-      prevButton.disabled = track.scrollLeft <= 2;
+      var maxScroll = track.scrollWidth - track.clientWidth - 6;
+      prevButton.disabled = track.scrollLeft <= 6;
       nextButton.disabled = track.scrollLeft >= maxScroll;
     };
 
