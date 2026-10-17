@@ -2172,11 +2172,13 @@ h1, h2, h3, h4, p, figure {
   }
 
   .doctor-badge {
-    right: 50%;
+    left: 50%;
+    right: auto;
     bottom: 22px;
+    width: max-content;
     gap: 12px;
     padding: 10px 18px 10px 12px;
-    transform: translateX(50%);
+    transform: translateX(-50%);
   }
 
   .doctor-badge__icon {
@@ -2428,7 +2430,11 @@ h1, h2, h3, h4, p, figure {
     flex-direction: column;
   }
 
-  .footer__legal li:first-child::before {
+  .footer__legal {
+    gap: 6px 20px;
+  }
+
+  .footer__legal li::before {
     display: none;
   }
 
